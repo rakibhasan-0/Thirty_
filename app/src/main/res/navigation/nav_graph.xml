@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/rollDice2">
+
+    <fragment
+        android:id="@+id/rollDice2"
+        android:name="com.example.thirty.RollDice"
+        android:label="fragment_roll_dice"
+        tools:layout="@layout/fragment_roll_dice" >
+        <action
+            android:id="@+id/action_rollDice2_to_calculateScore"
+            app:destination="@id/calculateScore" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calculateScore"
+        android:name="com.example.thirty.CalculateScore"
+        android:label="fragment_calculate_score"
+        tools:layout="@layout/fragment_calculate_score" >
+        <action
+            android:id="@+id/action_calculateScore_to_resultList"
+            app:destination="@id/resultList" />
+
+        <action
+            android:id="@+id/action_calculateScore_to_rollDice"
+            app:destination="@id/rollDice2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultList"
+        android:name="com.example.thirty.ResultList"
+        android:label="fragment_result_list"
+        tools:layout="@layout/fragment_result_list">
+
+        <action
+            android:id="@+id/action_result_list_to_home_page"
+            app:destination="@+id/rollDice2" />
+
+    </fragment>
+
+</navigation>
