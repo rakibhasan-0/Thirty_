@@ -1,16 +1,13 @@
 package com.example.thirty
 
 import android.os.Bundle
-import android.util.Log
 import android.util.TypedValue
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.thirty.databinding.FragmentCalculateScoreBinding
 
@@ -63,6 +60,12 @@ class CalculateScore : Fragment() {
         userSelectionOfDices()
         calculateScore()
 
+        submitButton()
+    }
+
+
+
+    private fun submitButton() {
         binding?.submitButton2?.setOnClickListener {
             viewModels.addTheScoreOfEachRound(viewModels.playerScore.value ?: 0)
             viewModels.setPlayerScore()
@@ -74,11 +77,7 @@ class CalculateScore : Fragment() {
                 findNavController().navigate(R.id.action_calculateScore_to_rollDice)
             }
         }
-
     }
-
-
-
 
 
     private fun calculateScore() {
@@ -108,6 +107,13 @@ class CalculateScore : Fragment() {
 
 
 
+
+
+
+
+
+
+
     private fun calculateScoreForCategory(category: Int) {
         val sumOfSelectedDice = diceLists?.sumBy { it.value } ?: 0
 
@@ -119,7 +125,6 @@ class CalculateScore : Fragment() {
         if (sum > 0 && sum % category == 0) {
             viewModels.playerScore(sum)
             setupObservers()
-            // there should be a function in order to remove the view from the child of diceView
             removeImageViewFromTheList()
 
         } else {
@@ -128,6 +133,13 @@ class CalculateScore : Fragment() {
 
         diceLists?.clear()
     }
+
+
+
+
+
+
+
 
 
     private fun removeImageViewFromTheList(){
@@ -146,6 +158,14 @@ class CalculateScore : Fragment() {
 
 
     }
+
+
+
+
+
+
+
+
 
     private fun restoreDiceVisibility() {
         for (i in 0 until (binding?.diceView?.childCount ?: 0)) {

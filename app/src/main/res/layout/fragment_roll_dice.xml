@@ -39,8 +39,8 @@
 
     <LinearLayout
         android:id="@+id/SelectedDices"
-        android:layout_width="428dp"
-        android:layout_height="93dp"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,61 +78,75 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:id="@+id/dice_view_1"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/white1"
-                android:tag="1" />
+                android:tag="1"
+                android:clickable="true"
+                android:contentDescription="Dice1"/>
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:tag="2"
-                android:src="@drawable/white2" />
+                android:src="@drawable/white2"
+                android:clickable="true"
+                android:contentDescription="Dice2"/>
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:tag="3"
-                android:src="@drawable/white3" />
+                android:src="@drawable/white3"
+                android:clickable="true"
+                android:contentDescription="Dice3"/>
 
         </LinearLayout>
 
         <!-- Second row of dices -->
         <LinearLayout
             android:layout_width="match_parent"
+            android:id="@+id/dice_view_2"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/white4"
-                android:tag="4" />
+                android:tag="4"
+                android:clickable="true"
+                android:contentDescription="Dice4"/>
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/white5"
-                android:tag="5" />
+                android:tag="5"
+                android:clickable="true"
+                android:contentDescription="Dice5"/>
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/imageView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/white6"
-                android:tag="6" />
+                android:tag="6"
+                android:clickable="true"
+                android:contentDescription="Dice6"/>
 
         </LinearLayout>
     </LinearLayout>

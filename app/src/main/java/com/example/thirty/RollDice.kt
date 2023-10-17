@@ -3,7 +3,6 @@ package com.example.thirty
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.thirty.databinding.FragmentRollDiceBinding
@@ -38,7 +37,7 @@ class RollDice : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_roll_dice, container, false)
+        binding = FragmentRollDiceBinding.inflate(inflater,container,false)
         return binding?.root
     }
 
@@ -57,6 +56,9 @@ class RollDice : Fragment() {
             if (throwCount < 3) {
                 rollDices()
                 throwCount++
+            }
+            if(throwCount == 3){
+                Toast.makeText(context,"You cannot throw no more",Toast.LENGTH_SHORT).show()
             }
         }
 
